@@ -119,14 +119,14 @@ REGEX="([0-9]+).$WORDLIST"
 [[ $LINES =~ $REGEX ]]
 SIZ="${BASH_REMATCH[1]}"
 
-while read PASSWORD; do
+while read RESOURCE; do
     LINE=$((LINE + 1))
     PROGRESS=$((LINE * 100 / SIZ))
-    echo -ne "\r     $YELLOW$LINE/$SIZ/$PROGRESS%/$PASSWORD                                    $END"
-    rsync $TARGET::$PASSWORD &>/dev/null
+    echo -ne "\r     $YELLOW$LINE/$SIZ/$PROGRESS%/$RESOURCE                                    $END"
+    rsync $TARGET::$RESOURCE &>/dev/null
   if [ $? -eq 0 ]; then
-    F1=$(/usr/bin/cat $WORDLIST | /usr/bin/grep "^$PASSWORD$" -n | /usr/bin/cut -d ":" -f 1)
-    echo -e "\n $BOX1 $RED$VAR15 $GREEN$PASSWORD$RED $VAR16 $GREEN$F1$END"
+    F1=$(/usr/bin/cat $WORDLIST | /usr/bin/grep "^$RESOURCE$" -n | /usr/bin/cut -d ":" -f 1)
+    echo -e "\n $BOX1 $RED$VAR15 $GREEN$RESOURCE$RED $VAR16 $GREEN$F1$END"
     echo ""
     sleep 2
     exit 0
