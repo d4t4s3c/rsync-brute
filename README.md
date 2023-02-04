@@ -14,7 +14,7 @@ root@kali:~#
 - <kbd>Use</kbd>
 
 ```cmd
-root@kali:~# RSAcrack -t <TARGET> -w <WORDLIST>
+root@kali:~# rsync-brute -t <TARGET> -w <WORDLIST>
 ```
 
 ---
