@@ -2,7 +2,7 @@
 
 **Brute Force - Rsync (Hidden Resources)**
 
-![](/1.png)
+![](/01.png)
 
 - <kbd>Download / Install</kbd>
 
