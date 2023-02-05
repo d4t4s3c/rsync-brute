@@ -1,6 +1,6 @@
 # rsync-brute
 
-**`rsync-brute` discovers hidden resources in `rsync` when the option is in mode `list = no` and we have no ability to list the resources.**
+**`rsync-brute` discovers hidden resources in `rsync` when the option is in mode: `list = no` and we have no ability to list the resources.**
 
 ![](/01.png)
 
