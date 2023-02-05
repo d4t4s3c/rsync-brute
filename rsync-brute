@@ -27,7 +27,7 @@ declare -r VAR15='Found:'
 declare -r VAR16='Line:'
 declare -r VAR17='Error!'
 declare -r VAR18='Fuck!'
-declare -r VAR19='could not find the password.'
+declare -r VAR19='no resources found.'
 declare -r VAR20='rsync not installed.'
 declare -r VAR21='Status:'
 declare -r VAR22='-============================-'
@@ -125,7 +125,7 @@ while read RESOURCE; do
     echo -ne "\r     $YELLOW$LINE/$SIZ/$PROGRESS%/$RESOURCE                                    $END"
     rsync $TARGET::$RESOURCE &>/dev/null
   if [ $? -eq 0 ]; then
-    F1=$(/usr/bin/cat $WORDLIST | /usr/bin/grep "^$RESOURCE$" -n | /usr/bin/cut -d ":" -f 1)
+    F1=$(/usr/bin/cat $WORDLIST | grep "^$RESOURCE$" -n | cut -d ":" -f 1)
     echo -e "\n $BOX1 $RED$VAR15 $GREEN$RESOURCE$RED $VAR16 $GREEN$F1$END"
     echo ""
     sleep 2
